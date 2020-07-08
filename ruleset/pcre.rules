@@ -117,6 +117,8 @@ regex=id=firewall;                      include = sonicwall.rules;
 regex=spamd;                            include = spamassassin.rules;
 # More complex regex to handle data coming directly from Squid log files
 regex=(Acceptin|Squid|Disabled|DENIED); include = squid.rules;
+# Support both syslog-based and file-based monitoring for openvpn's logs
+regex=(Listening for|process exiting|Connection reset|MULTI_sva|SENT CONTROL); include = openvpn.rules;
 regex=sshd;                             include = ssh.rules;
 regex=sudo;                             include = sudo.rules;
 regex=suhosin;                          include = suhosin.rules;
